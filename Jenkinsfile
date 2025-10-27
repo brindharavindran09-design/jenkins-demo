@@ -17,6 +17,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
+                export PYTHONPATH=$WORKSPACE 
                 sh '. venv/bin/activate && pytest -v'
             }
         }
